@@ -51,7 +51,13 @@ function cadastrar(objeto){
 }
 
 function detalhar(idUsuario){
-// Seu código aqui
+    let detailId = usuarios.find(usuario => usuario.id == idUsuario)
+
+    console.log(`Nome: ${detailId.nome}`);
+    console.log(`Email: ${detailId.email}`);
+
+    console.table(detailId.enderecos);
+    console.table(detailId.formasDePagamento);
 }
 
 function remover(idDoUsuarioParaRemover){
