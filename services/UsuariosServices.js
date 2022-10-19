@@ -1,13 +1,25 @@
 const usuarios = require('../databases/usuarios.json')
 
 function listar(){
+
+    console.table(usuarios.map(
+        u =>{
+            return{
+                id: u.id,
+                nome: u.nome,
+                email: u.email,
+            }
+        }
+    ));
     
-       for(let i = 0; i< usuarios.length; i++){
-        console.log(usuarios[i]);
-        console.table(usuarios[i].id);
-        console.table(usuarios[i].nome);
-        console.table(usuarios[i].email);
-       }
+
+    //como eu havia feito//
+    //    for(let i = 0; i< usuarios.length; i++){
+    //     console.log(usuarios[i]);
+    //     console.table(usuarios[i].id);
+    //     console.table(usuarios[i].nome);
+    //     console.table(usuarios[i].email);
+    //    }
 }
 
 
