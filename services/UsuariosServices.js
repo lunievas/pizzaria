@@ -61,7 +61,14 @@ function detalhar(idUsuario){
 }
 
 function remover(idDoUsuarioParaRemover){
-    // Seu código aqui
+    //let index = 0
+    for(let i = 0; i < usuarios.length; i++){
+        if(usuarios[i].id === idDoUsuarioParaRemover){
+            delete usuarios[i];
+        }
+    }
+    console.log(usuarios);
+    
 }
 
 function alterar(novosDados, idUsuario){
