@@ -67,7 +67,7 @@ function remover(idDoUsuarioParaRemover){
             delete usuarios[i];
         }
     }
-    console.log(usuarios);
+    
     
 }
 
