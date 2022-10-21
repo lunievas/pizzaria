@@ -1,3 +1,3 @@
 const UsuariosServices = require('../services/UsuariosServices');
 
-UsuariosServices.remover(131);
+UsuariosServices.remover(2);

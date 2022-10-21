@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const fs = require('fs');
 
 
+
 function listar(){
 
     console.table(usuarios.map(
@@ -41,6 +42,16 @@ function listarNomes(){
 
 }
 
+
+function buscarPorTrecho(trecho){
+    
+    const buscaTrecho = usuarios.filter(usuario => usuario.nome.includes(trecho));
+        
+        
+    
+    console.log(buscaTrecho);
+}
+
 function salvar(arrayDeUsuarios){
     // Seu código aqui
 }
@@ -66,7 +77,7 @@ function cadastrar(objeto){
 }
 
 function detalhar(idUsuario){
-    let detailId = usuarios.find(usuario => usuario.id == idUsuario)
+    let detailId = usuarios.find(usuario => usuario.id === idUsuario);
 
     console.log(`Nome: ${detailId.nome}`);
     console.log(`Email: ${detailId.email}`);
@@ -76,12 +87,12 @@ function detalhar(idUsuario){
 }
 
 function remover(idDoUsuarioParaRemover){
-    //let index = 0
-    for(let i = 0; i < usuarios.length; i++){
-        if(usuarios[i].id === idDoUsuarioParaRemover){
-            delete usuarios[i];
-        }
-    }
+    let userToRemove = usuarios.find(usuario => usuario.id === idDoUsuarioParaRemover);
+    let userPositionInUsers = usuarios.indexOf(userToRemove);
+
+    usuarios.splice(userPositionInUsers,1);
+    
+    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios,null,4))
     
     
 }
@@ -89,9 +100,11 @@ function remover(idDoUsuarioParaRemover){
 function alterar(novosDados, idUsuario){
     let modifiedPassword = bcrypt.hashSync(novosDados.senha,10);
 
-    if(usuarios.id === idUsuario){
-        usuarios.map(
-            u => {
+    let findUser = usuarios.find(usuario => usuario.id == idUsuario);
+
+   
+      const userModified =  usuarios.map(
+            usuario => {
                 return {
                     nome: novosDados.nome,
                     email: novosDados.email,
@@ -99,8 +112,8 @@ function alterar(novosDados, idUsuario){
                 }
             }
         )
-    }
 }
+
 
 function addEndereco(novoEndereco, idUsuario){
     // Seu código aqui
@@ -130,6 +143,7 @@ const UsuariosServices = {
     cadastrar,
     listar,
     listarNomes,
+    buscarPorTrecho,
     detalhar,
     remover,
     alterar,
