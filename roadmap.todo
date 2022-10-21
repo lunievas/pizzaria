@@ -75,6 +75,7 @@ Fase 1 - Funções dentro do arquivo UsuariosServices.js:
 
     
     Função remover:
+        //NOT FULLY DONE YET//
         
         Objetivo: A função deve remover um usuário do arquivo usuarios.json a partir do seu id.
         Essa função deve receber o id de um usuário.

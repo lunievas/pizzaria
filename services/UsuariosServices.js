@@ -6,25 +6,40 @@ const fs = require('fs');
 function listar(){
 
     console.table(usuarios.map(
-        u =>{
+        usuario => {
             return{
-                id: u.id,
-                nome: u.nome,
-                email: u.email,
+                id: usuario.id,
+                nome: usuario.nome,
+                email: usuario.email,
+
             }
         }
     ));
+
+    //OUTRA FORMA DE FAZER
+    // const formatUsuario = usuario =>{
+
+    
+    //     return{
+    //             id: usuario.id,
+    //             nome: usuario.nome,
+    //             email: usuario.email,
+    //         }
+    //     };
+
+    // let usuariosFormatados = usuarios.map(formatUsuario);
+
+    // console.table(usuariosFormatados);
     
 
-    //como eu havia feito//
-    //    for(let i = 0; i< usuarios.length; i++){
-    //     console.log(usuarios[i]);
-    //     console.table(usuarios[i].id);
-    //     console.table(usuarios[i].nome);
-    //     console.table(usuarios[i].email);
-    //    }
+
 }
 
+function listarNomes(){ 
+
+    console.table(usuarios.map(usuario => usuario.nome));
+
+}
 
 function salvar(arrayDeUsuarios){
     // Seu código aqui
@@ -72,7 +87,19 @@ function remover(idDoUsuarioParaRemover){
 }
 
 function alterar(novosDados, idUsuario){
-    // Seu código aqui
+    let modifiedPassword = bcrypt.hashSync(novosDados.senha,10);
+
+    if(usuarios.id === idUsuario){
+        usuarios.map(
+            u => {
+                return {
+                    nome: novosDados.nome,
+                    email: novosDados.email,
+                    senha: modifiedPassword,
+                }
+            }
+        )
+    }
 }
 
 function addEndereco(novoEndereco, idUsuario){
@@ -102,6 +129,7 @@ function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento
 const UsuariosServices = {
     cadastrar,
     listar,
+    listarNomes,
     detalhar,
     remover,
     alterar,
