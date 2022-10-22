@@ -47,7 +47,7 @@ function buscarPorTrecho(trecho){
     
     const buscaTrecho = usuarios.filter(usuario => usuario.nome.includes(trecho));
         
-        
+    
     
     console.log(buscaTrecho);
 }
@@ -91,7 +91,7 @@ function remover(idDoUsuarioParaRemover){
     let userPositionInUsers = usuarios.indexOf(userToRemove);
 
     usuarios.splice(userPositionInUsers,1);
-    
+
     fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios,null,4))
     
     
@@ -100,18 +100,29 @@ function remover(idDoUsuarioParaRemover){
 function alterar(novosDados, idUsuario){
     let modifiedPassword = bcrypt.hashSync(novosDados.senha,10);
 
-    let findUser = usuarios.find(usuario => usuario.id == idUsuario);
+    let userById = usuarios.find(usuario =>  usuarios.id === idUsuario);
+
+    userById = {
+        nome: novosDados.nome,
+        email: novosDados.email,
+        senha: modifiedPassword,
+    }
+
+    usuarios.push(userById)
+
+    // const userChanged = usuarios.map(
+
+    //     user=>{
+    //         return{
+    //             nome: user.novosDados,
+    //             email: user.novosDados,
+    //             senha: user.modifiedPassword,
+    //         }
+    //     }
+    // )
+    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios,null,4))
 
    
-      const userModified =  usuarios.map(
-            usuario => {
-                return {
-                    nome: novosDados.nome,
-                    email: novosDados.email,
-                    senha: modifiedPassword,
-                }
-            }
-        )
 }
 
 

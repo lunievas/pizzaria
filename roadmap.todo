@@ -46,6 +46,7 @@ Fase 1 - Funções dentro do arquivo UsuariosServices.js:
 
 
     Função detalhar:
+        //DONE
 
         Objetivo: Essa função deve mostrar detalhes de um determinado usuário.
         Os detalhes devem ser exibidos desta forma;
@@ -75,7 +76,7 @@ Fase 1 - Funções dentro do arquivo UsuariosServices.js:
 
     
     Função remover:
-        //NOT FULLY DONE YET//
+        //DONE//
         
         Objetivo: A função deve remover um usuário do arquivo usuarios.json a partir do seu id.
         Essa função deve receber o id de um usuário.
