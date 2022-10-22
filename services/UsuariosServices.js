@@ -120,12 +120,13 @@ function alterar(novosDados, idUsuario){
 
 function addEndereco(novoEndereco, idUsuario){
     let userById = usuarios.find(usuario => usuario.id === idUsuario);
+    let userPosition = usuarios.indexOf(userById);
+    
+    usuarios[userPosition].enderecos.push(novoEndereco);
+   
 
-    userById = {
-        enderecos: usuarios.endereco.push(novoEndereco)
-    }
 
-    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(userById));
+    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios, null, 4));
 
 }
 
