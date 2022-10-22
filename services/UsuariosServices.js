@@ -126,12 +126,18 @@ function addEndereco(novoEndereco, idUsuario){
    
 
 
-    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios, null, 4));
+    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios, null,4));
 
 }
 
 function removerEndereco(posicaoDoEndereco, idUsuario){
-// Seu código aqui
+    let userById = usuarios.find(usuario => usuario.id === idUsuario);
+    let userPosition = usuarios.indexOf(userById);
+    // console.log(userById);
+
+     usuarios[userPosition].enderecos.splice(posicaoDoEndereco,1);
+
+     fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios, null, 4));
 }
 
 function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
