@@ -84,6 +84,7 @@ Fase 1 - Funções dentro do arquivo UsuariosServices.js:
 
     
     Função alterar:
+        //DONE//
 
         Objetivo: A função deve alterar os dados de pessoais de um usuário (nome, email e senha).
         Ela recebe dois parâmetros.
