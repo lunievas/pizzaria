@@ -109,7 +109,7 @@ Fase 1 - Funções dentro do arquivo UsuariosServices.js:
 
 
     Função removerEndereco:
-    
+        //DONE//
         Objetivo: A função deve remover o endereço especificado de um usuário.
         Essa função deve receber dois parâmetros.
         O primeiro, a posicao do endereço no array de endereços do usuário

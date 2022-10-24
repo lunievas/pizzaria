@@ -1,3 +1,3 @@
 const UsuariosServices = require("../services/UsuariosServices");
 
-UsuariosServices.removerEndereco(2,4);
+UsuariosServices.removerEndereco(0,127)

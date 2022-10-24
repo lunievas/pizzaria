@@ -53,7 +53,7 @@ function buscarPorTrecho(trecho){
 }
 
 function salvar(arrayDeUsuarios){
-    // Seu código aqui
+    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(arrayDeUsuarios, null, 4));
 }
 
 function cadastrar(objeto){
@@ -161,6 +161,7 @@ const UsuariosServices = {
     listar,
     listarNomes,
     buscarPorTrecho,
+    salvar,
     detalhar,
     remover,
     alterar,
