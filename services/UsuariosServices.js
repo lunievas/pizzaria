@@ -98,21 +98,17 @@ function remover(idDoUsuarioParaRemover){
 }
 
 function alterar(novosDados, idUsuario){
+
     let modifiedPassword = bcrypt.hashSync(novosDados.senha,10);
     
     let userById = usuarios.find(usuario =>  usuario.id === idUsuario);
     let userPosition = usuarios.indexOf(userById);
 
-    userById ={
-        nome: novosDados.nome,
-        email: novosDados.email,
-        senha: modifiedPassword,
-    }
-
-    usuarios[userPosition] = userById;
-
-    console.log(usuarios);
-
+    usuarios[userPosition].nome = novosDados.nome;
+    usuarios[userPosition].email = novosDados.email;
+    usuarios[userPosition].senha = modifiedPassword;
+        
+       
     fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios,null,4));
    
 }
@@ -141,7 +137,20 @@ function removerEndereco(posicaoDoEndereco, idUsuario){
 }
 
 function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
-// Seu código aqui        
+    let userById = usuarios.find(usuario => usuario.id === idUsuario);
+    let userPosition = usuarios.indexOf(userById);
+
+    userById = {
+        enderecos: [posicaoDoEndereco].novoEndereco,
+    }
+
+    usuarios[userPosition] = userById;
+    
+    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios, null, 4));
+
+    
+
+
 }
 
 function addFormaDePagamento(novaFormaDePagamento, idUsuario){
