@@ -140,11 +140,8 @@ function alterarEndereco(posicaoDoEndereco, novoEndereco, idUsuario){
     let userById = usuarios.find(usuario => usuario.id === idUsuario);
     let userPosition = usuarios.indexOf(userById);
 
-    userById = {
-        enderecos: [posicaoDoEndereco].novoEndereco,
-    }
+    usuarios[userPosition].enderecos[posicaoDoEndereco] = novoEndereco;
 
-    usuarios[userPosition] = userById;
     
     fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios, null, 4));
 
