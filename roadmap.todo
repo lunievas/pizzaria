@@ -118,7 +118,7 @@ Fase 1 - Funções dentro do arquivo UsuariosServices.js:
 
     
     Função alterarEndereco:
-        
+        //DONE//
         Objetivo: A função deve alterar um endereço de um usuário.
         Essa função deve receber três parâmetros.
         O primeiro, a posicao do endereco no array de enderecos do usuário
@@ -127,7 +127,7 @@ Fase 1 - Funções dentro do arquivo UsuariosServices.js:
 
 
     Função addFormaDePagamento:
-
+        //DONE//
         Objetivo: A função deve adicionar uma nova forma de pagamento no array de formasDePagamento do usuário e atualizar o arquivo usuarios.json
         Essa função recebe dois parametros.
         O primeiro, uma string contendo a nova forma de pagamento.
