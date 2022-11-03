@@ -1,3 +1,3 @@
 const UsuariosServices = require("../services/UsuariosServices");
 
-UsuariosServices.addFormaDePagamento("Boleto bancário", 131);
+UsuariosServices.removerFormaDePagamento(0,131)

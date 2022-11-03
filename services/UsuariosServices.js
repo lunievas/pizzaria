@@ -155,13 +155,18 @@ function addFormaDePagamento(novaFormaDePagamento, idUsuario){
    let userPosition = usuarios.indexOf(userById);
 
    usuarios[userPosition].formasDePagamento.push(novaFormaDePagamento);
-   
+
    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios, null,4));
 
 }
 
 function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuario){
-    // Seu código aqui
+    let userById = usuarios.find(usuario => usuario.id === idUsuario);
+    let userPosition =  usuarios.indexOf(userById);
+
+    usuarios[userPosition].formasDePagamento.splice(posicaoDaFormaDePagamento,1);
+
+    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(usuarios, null, 4));
 }
 
 function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario){
