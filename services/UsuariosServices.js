@@ -170,7 +170,13 @@ function removerFormaDePagamento(posicaoDaFormaDePagamento, idUsuario){
 }
 
 function alterarFormaDePagamento(novaFormaDePagamento, posicaoDaFormaDePagamento, idUsuario){
-    // Seu código aqui
+    let userById = usuarios.find(usuario => usuario.id === idUsuario);
+    let userPosition = usuarios.indexOf(userById);
+
+    usuarios[userPosition].formasDePagamento[posicaoDaFormaDePagamento] = novaFormaDePagamento;
+
+    salvar(usuarios);
+
 }
 
 const UsuariosServices = {
