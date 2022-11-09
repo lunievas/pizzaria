@@ -42,7 +42,6 @@ function listarNomes(){
 
 }
 
-
 function buscarPorTrecho(trecho){
     
     const buscaTrecho = usuarios.filter(usuario => usuario.nome.includes(trecho));

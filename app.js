@@ -11,7 +11,8 @@ const servidor = express();
 
 servidor.get('/usuarios', (req,res)=> {
     console.log("chegou uma requisição");
-    return res.send("Sua ligação é muito importante...");
+    // return res.send("Sua ligação é muito importante...");
+    return res.sendFile(__dirname + '/views/index.html');
 } );
 
 //4- Colocar o servidor no modo "Aguardando requisição"
