@@ -1,5 +1,6 @@
 //1- Importar o express
 const express = require('express');
+const { appendFile } = require('fs');
 const path = require('path');
 
 
@@ -23,9 +24,12 @@ servidor.get('/', (req,res)=> {
 
 servidor.get('/carrinho', (req,res)=>{
 
-    return res.sendFile(__dirname + '/views/carrinho.html')
-})
+    return res.sendFile(__dirname + '/views/carrinho.html');
+});
 
+servidor.get('/perfil',(req,res)=>{
+    return res.sendFile(__dirname + '/views/perfil.html');
+});
 
 
 servidor.listen(3000)

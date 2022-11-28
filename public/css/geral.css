@@ -1,21 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+
+
 body{
     background-color: gray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
 }
 
 header{
-    border: 3px dotted red;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 80px;
 }
 
-button{
+header input{
+    font-size: 1.5rem;
+    border-style: none;
+    padding: 10px;
+    width: 600px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header span{
+    color: #fff;
+    background-color: #ff5100;
+    border-radius: 50%;
+    padding: 3px 9px;
+
+}
+
+button, .input-file-container{
     color: #fff;
     background-color:#ff5100;
     border: none;
     padding: 10px 20px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    
+}
 
+button:hover, .input-file-container:hover {
+    background-color: black;
 }
 
 .btBuscar{
     width: 300px;
+    font-size: 1.5rem;
 }
 #logo{
     width: 64px;
@@ -24,4 +68,12 @@ button{
 
 article > img{
     width: 300px;
+}
+
+/* .input-file-container{
+    
+} */
+
+input[type="file"]{
+    display: none;
 }
