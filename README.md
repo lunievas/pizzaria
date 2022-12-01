@@ -1,0 +1,1 @@
+# Projeto desenvolvido durante as aulas do curso de Web Full Stack Node da Digital House. Projeto feito desde o CRUD até html, css e Javascript.

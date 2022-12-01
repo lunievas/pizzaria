@@ -23,6 +23,7 @@ body{
 
 #form-usuario label{
     margin-bottom: 15px;
+    color: #fff;
 }
 
 #form-usuario .input-file-container{

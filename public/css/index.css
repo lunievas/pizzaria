@@ -1,0 +1,56 @@
+main {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+main article {
+   position: relative;
+}
+
+/* main article:nth-child(1) {
+  position: relative;
+  background-color: green;
+} */
+
+main article h2 {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+}
+
+main article span {
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.8);
+  color: #fff;
+  left: 0;
+  top: 40px;
+  padding: 5px;
+}
+
+main article a{
+    padding: 10px 20px;
+    background-color: rgb(46, 130, 255);
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+main article button{
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    text-decoration: none;
+
+}
+
+main article img{
+    width: 100%;
+    display: block;
+}
