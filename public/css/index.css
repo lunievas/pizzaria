@@ -3,6 +3,7 @@ main {
   grid-template-columns: repeat(4,1fr);
   gap: 10px;
   padding: 10px;
+  position: relative;
 }
 
 main article {
@@ -54,3 +55,10 @@ main article img{
     width: 100%;
     display: block;
 }
+
+@media screen and (max-width: 720px){
+  main{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
