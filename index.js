@@ -29,3 +29,4 @@ function startInquirer(){
 
 console.clear();
 startInquirer();
+
