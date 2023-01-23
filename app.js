@@ -31,6 +31,9 @@ servidor.get('/perfil',(req,res)=>{
     return res.sendFile(__dirname + '/views/perfil.html');
 });
 
+servidor.get('/cadastro', (req,res)=>{
+    return res.sendFile(__dirname + "/views/cadastro.html")
+})
 
 servidor.listen(8000)
 

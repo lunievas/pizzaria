@@ -110,6 +110,27 @@ form input[type="number"] {
 
 }
 
+form input:invalid{
+    outline: 3px solid crimson;
+}
+
+form input:valid{
+    border: 3px solid greenyellow;
+}
+
+form input:invalid+.error-msg{
+    display: block;
+
+}
+
+form .error-msg{
+    color: crimson;
+    font-size: 14px;
+    display: none;
+}
+
+
+
 @media screen and (max-width: 550px) {
     .btBuscar {
         display: none;
